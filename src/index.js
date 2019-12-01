@@ -1,7 +1,15 @@
 const express = require('express');
 const morgan = require('morgan');
+const mongoose = require('mongoose');
+
 
 const app = express();
+
+/**
+ * Database Setup
+ */
+
+mongoose.connect('mongodb://localhost/uploado', { useNewUrlParser: true });
 
 app.use(express.json());
 app.use(express.urlencoded({extended:true}));
